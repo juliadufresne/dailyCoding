@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1</title>
+</head>
+<body>
+<script>
+
+const array = [1, 1, 0, -1, -1]
+
+// Complete the plusMinus function below.
+function plusMinus(arr) {
+    const length = arr.length
+
+    let positive = 0
+    let zero = 0
+    let negative = 0
+
+    arr.forEach((i) => {
+        if (i > 0) {
+            positive++
+        }
+        if (i === 0) {
+            zero++
+        }
+        if (i < 0) {
+            negative++
+        }
+    })
+    const num1 = positive / length
+    const num2 = zero / length
+    const num3 = negative / length 
+
+    return num1 + '\n' + num2 + '\n' + num3
+}
+
+    const finalnum1 = num1.toFixed(6)
+    const finalnum2 = num2.toFixed(6)
+    const finalnum3 = num3.toFixed(6)
+plusMinus(array)
+
+</script>
+</body>
+</html>

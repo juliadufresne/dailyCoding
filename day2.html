@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2</title>
+</head>
+<body>
+    <script>
+
+        let n = 6
+
+function staircase(n) {
+
+    let totalPyramid
+    let arr = []
+
+    for (let i = 1; i < n + 1; i++) {
+        let character = "#"
+        let pyramid = 
+                character.repeat(i)
+
+        let space = " "
+        let spacePyramid = 
+                space.repeat(n-i)
+
+        totalPyramid = 
+                spacePyramid + pyramid
+                
+        arr.push(totalPyramid)
+    }
+
+    return arr;
+}
+
+        staircase(n).forEach(i => {
+            console.log(i)
+        })
+
+    </script>
+</body>
+</html>

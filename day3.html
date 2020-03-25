@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3</title>
+</head>
+<body>
+    <script>
+
+let array = [5, 54, 123, 43, 18]
+
+function miniMaxSum(arr) {
+    let smallNum = Math.min(...arr)
+    let bigNum = Math.max(...arr)
+    let newArrBig = []
+    let newArrSmall = []
+    let newArrEqual = []
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+    arr.forEach((i) => {
+        if (i !== bigNum) {
+            newArrSmall.push(i)
+        }
+
+        if (i !== smallNum) {
+            newArrBig.push(i)
+        }
+
+        if (i === bigNum && i === smallNum) {
+            newArrEqual.push(i)
+        }
+    })
+
+    newArrEqual.pop()
+
+    if (bigNum === smallNum) {
+        newArrBig = newArrEqual
+        newArrSmall = newArrEqual
+    }
+
+    let bigValue = newArrBig.reduce(reducer)
+    let smallValue = newArrSmall.reduce(reducer)
+
+    return smallValue + " " + bigValue
+}
+
+miniMaxSum(array)
+
+    </script>
+</body>
+</html>

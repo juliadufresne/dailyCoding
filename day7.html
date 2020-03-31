@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 7</title>
+</head>
+<body>
+    <script>
+
+        let grades = [73, 67, 38, 33]
+
+        function gradingStudents(grades) {
+
+        let newArr = grades.map((i)=>{
+            let rounded = Math.ceil(i / 5) * 5
+            if (i % 5 <= 2) {
+                return i
+            } else if (i >= 38) {
+                return rounded
+            } else {
+                return i
+            }
+        })
+        return newArr
+        }
+
+        gradingStudents(grades)
+
+    </script>
+</body>
+</html>

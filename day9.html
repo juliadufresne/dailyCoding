@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 9</title>
+</head>
+<body>
+    <script>
+
+    let s = 7
+    let t = 11
+    let a = 5
+    let b = 15
+    let apples = [-2, 2, 1]
+    let appleDest = []
+    let oranges = [5, -6]  
+    let orangeDest = [] 
+    let collideApples = []
+    let collideOranges = []
+
+    function countApplesAndOranges(s, t, a, b, apples, oranges) {
+
+        apples.map((i)=>{
+            let appleCoordinates = a + i
+            appleDest.push(appleCoordinates)
+        })
+
+        appleDest.map((i)=>{
+            if (i >= s && i <= t) {
+                collideApples.push(i)
+            }
+        })
+        
+        let finalApples = collideApples.length
+
+        oranges.map((i)=>{
+            let orangeCoordinates = b + i
+            orangeDest.push(orangeCoordinates)
+        })
+
+        orangeDest.map((i)=>{
+            if (i >= s && i <= t) {
+                collideOranges.push(i)
+            }
+        })
+
+        let finalOranges = collideOranges.length
+
+
+        return finalApples + '\n' + finalOranges
+    }
+    countApplesAndOranges(s, t, a, b, apples, oranges)
+
+    </script>
+</body>
+</html>
